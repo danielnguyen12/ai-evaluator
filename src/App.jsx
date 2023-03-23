@@ -1,11 +1,17 @@
+import { useState } from 'react';
 import { Container, Box } from '@chakra-ui/react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import TextInput from './components/TextInput';
 
 const App = () => {
+  const [evaluation, setEval] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const evaluateWriting = (prompt, studentResponse) => {
-    console.log(prompt, studentResponse);
+    setLoading(true);
+    setIsOpen(true);
   };
 
   return (
